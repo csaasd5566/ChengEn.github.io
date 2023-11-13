@@ -1,0 +1,220 @@
+*{
+    font-family: 'Noto Sans', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+#particles{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+body {
+    margin: 0;
+    padding-top: 60px; /* 設定一個上邊距來確保內文不會被導覽列覆蓋，這個值應該等於導覽列的高度 */
+    display: flex;
+    justify-content: center; /* 使主內容水平居中 */
+    align-items: center; /* 使主內容垂直居中 */
+    min-height: 100vh; /* 設定最小高度為視窗的高度，使得即使內容不足也能居中顯示 */
+    box-sizing: border-box; /* 保證 padding 不會影響到元素的最終大小 */
+}
+.navigation {
+    position: fixed; /* 固定在頁面頂部 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* 設定導覽列高度 */
+    display: flex;
+    justify-content: space-between; /* 兩側的內容分開對齊 */
+    align-items: center; /* 垂直居中 */
+    padding: 0 10px; /* 加上一些左右邊距 */
+    background: #FFF; /* 設定背景色 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 可選擇，為導覽列添加陰影 */
+    z-index: 1000; /* 確保導覽列在內容之上 */
+}
+.name{
+
+    padding: 0; /* 移除额外的内边距 */
+    margin-right: auto; /* 确保右侧的元素向右推 */
+}
+.navigation .name {
+    margin-left: 20px; /* 已经有的样式，保持左边距 */
+    text-align: left;
+    font-size: 28px; /* 调整字体大小 */
+    padding: 0 10px; /* 添加适当的内边距 */
+    /* 移除 flex: 1; */
+}
+.navigation .name:hover {
+    background-color: transparent; /* 鼠标悬停在名字上不改变背景色 */
+}
+.navigation .links {
+    margin-right: 20px; /* 或者根据实际需要调整 */
+}
+
+.navigation .links a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 12px; 
+    font-size: 20px; /* 增加字体大小 */
+    transition: background-color 0.3s; /* 平滑背景颜色过渡 */
+}
+.navigation .links a:hover {
+    background-color: #eaeaea; /* 鼠标悬停时的背景色 */
+    color: #000; /* 可以修改为鼠标悬停时的文字颜色 */
+}
+.center-content {
+    text-align: center;
+    /* 不再需要設定 width, height, position, top, transform */
+}
+a {
+    text-decoration: none;
+    color: #333; /* 連結的文字顏色 */
+}
+.about,
+.about-me,
+.blog {
+    position: absolute;    
+    top: 0%;
+    width: 100%;
+    height: 80px;    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.home {
+    text-align: center;
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    left: 0%;   
+}
+
+.img-inside {
+    width: 100%;   
+    height: 200px;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+a.a-img:link {color:#ffffff;}      /* 未访问链接*/
+a.a-img:visited {color:#ffffff;}  /* 已访问链接 */
+a.a-img:hover {color:#ffffff;}  /* 鼠标移动到链接上 */
+a.a-img:active {color:#ffffff;}  /* 鼠标点击时 */
+.a-img{    
+    background-color: aquamarine;   
+    font-family: 'Noto Sans', sans-serif;  
+    display:inline-flex;
+    vertical-align: top;
+    border-radius: 10px;       
+    padding-right:10px;  
+    margin: 10px;  
+    height: 0px; 
+    line-height: 50px;
+    font-size: 0px;    
+    margin: 5px; 
+}
+.a-img:hover{
+    background-color: mediumaquamarine;
+}
+.a-img img{    
+    width: 40px;
+    margin: 5px;   
+}
+#text_h1{
+    font-weight: inherit;
+    font-family: inherit;
+    text-align: center;
+    color: #ababab;
+    display: none;
+    font-size: 4rem;
+}
+.text_h1{
+    font-weight: inherit;
+    font-family: inherit;
+    text-align: center;
+    color: #ababab;
+    font-size: 5rem;
+    
+}
+li{
+    color: #ababab;
+}
+ul{
+    display: none;
+    text-align: center;
+    margin: 0%;
+}
+.about-me2{
+    position: absolute;
+    top: 100%;    
+    left: 0%;
+    width: 100%;
+    height: 650px;
+    text-align: center;
+}
+.in-text{
+    font-size: 30px;
+    text-align: center;
+}
+.about-me2 p{
+    color: #ababab;
+    font-size: 20px;
+    margin:10px 0px;
+    display: none;
+}
+@media (max-width: 768px) {
+    /* 对小于或等于768px宽的屏幕应用样式 */
+
+    .navigation {
+        font-size: 18px; /* 减小字体大小 */
+        line-height: 60px;
+        height: 60px;
+    }
+
+    .navigation .name {
+        font-size: 18px; /* 如果名字也需要调整大小的话 */
+    }
+
+    .navigation .links a {
+        padding: 0 8px; /* 调整链接的内边距，减小间距 */
+        font-size: 16px; /* 适当减小字体大小 */
+    }
+}
+/* 响应式布局调整 */
+@media (max-width: 720px) {
+    /* 将图片链接设置为垂直排列 */
+    .img-inside {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* 水平居中对齐 */
+        justify-content: center; /* 确保子元素在容器中垂直居中 */
+        width: 100%; /* 设置容器宽度为100%，以便占满整个屏幕宽度 */
+    }
+    
+    .a-img img {
+        width: 30px; /* 调整图片大小 */
+        height: auto; /* 保持图片的纵横比 */
+    }
+}
+
+@media (max-width: 480px) {
+    /* 对小于或等于480px宽的屏幕应用样式 */
+    .navigation {
+        font-size: 14px; /* 进一步减小字体大小 */
+        line-height: 50px;
+        height: 50px;
+    }
+
+    .navigation .name {
+        margin-left: 10px;
+        font-size: 16px; /* 进一步减小名字的字体大小 */
+    }
+
+    .navigation .links a {
+        padding: 0 5px; /* 进一步减小链接的内边距 */
+        font-size: 14px; /* 保持字体大小不变或适当减小 */
+    }
+}
